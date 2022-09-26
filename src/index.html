@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+
+    <title>Crack Initiation Tool!</title>
+  </head>
+  <body>
+    <h1>Hello from Electron renderer!</h1>
+    <p id="info"></p>
+    <button type="button" id="btnLoadMaterial">Load Material</button>
+    <button type="button" id="btnChart">Draw Chart!</button>
+    <canvas id="materialSN" width="300" height="300"></canvas>
+  </body>
+  <script src="renderer.js"></script>
+  <script src="material.js"></script>
+</html>

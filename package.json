@@ -1,0 +1,17 @@
+{
+  "name": "crinit",
+  "version": "1.0.0",
+  "description": "Crack initiation software",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^3.9.1",
+    "electron": "^20.2.0",
+    "electron-chartjs": "^1.0.0",
+    "update-electron-app": "^2.0.1"
+  }
+}
