@@ -11,7 +11,6 @@
   "dependencies": {
     "chart.js": "^3.9.1",
     "electron": "^20.2.0",
-    "electron-chartjs": "^1.0.0",
     "update-electron-app": "^2.0.1"
   }
 }

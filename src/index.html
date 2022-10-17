@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/index.css">
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
@@ -10,15 +11,43 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
+    <script src="packages/Chart.min.js"> </script>
 
     <title>Crack Initiation Tool!</title>
   </head>
   <body>
     <h1>Hello from Electron renderer!</h1>
+    <div class="grid">
+      <div>
+        <h3>Material</h3>
+        <button type="button" id="btnLoadMaterial">Load Material</button>
+        <!-- <button type="button" id="btnChart">Draw Chart!</button> -->
+        <!-- <button type="button" id="btnTest">Test</button> -->
+
+      </div>
+      <div>
+        <h3>Plot Selection</h3>
+        <button type="button" id="btnShowSE" name="button">Cyclic Stress vs. Strain</button>
+        <button type="button" id="btnShowSN" name="button">Strain Amplitude vs. Cycles</button>
+      </div>
+      <div>
+        <h3>Spectrum</h3>
+      </div>
+      <div class="span-row-2">
+        <h3>Plots</h3>
+        <canvas id="materialSN" width="300" height="300"></canvas>
+      </div>
+      <div>
+        <h3>Solution Input</h3>
+      </div>
+      <div>
+        <h3>Console Log</h3>
+      </div>
+      <div>
+        <h3>Solution Log</h3>
+      </div>
+    </div>
     <p id="info"></p>
-    <button type="button" id="btnLoadMaterial">Load Material</button>
-    <button type="button" id="btnChart">Draw Chart!</button>
-    <canvas id="materialSN" width="300" height="300"></canvas>
   </body>
   <script src="renderer.js"></script>
   <script src="material.js"></script>

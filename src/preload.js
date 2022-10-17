@@ -1,8 +1,10 @@
 const { contextBridge, ipcRenderer } = require('electron')
+// const Chart = require('chart.js');
 
 contextBridge.exposeInMainWorld('electronAPI',{
   openFile: () => ipcRenderer.invoke('dialog:openFile'),
-  returnChart: () => ipcRenderer.invoke('returnChart')
+  returnChart: (chart, config) => ipcRenderer.invoke('returnChart', chart, config),
+  testIPC: (message) => ipcRenderer.invoke('testIPC', message)
 })
 //
 // contextBridge.exposeInMainWorld('versions', {

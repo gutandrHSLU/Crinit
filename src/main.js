@@ -1,16 +1,16 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
 const fs = require('fs')
-const Chart = require('chart.js');
-
+// const Chart = require('chart.js');
 
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
-    height: 600,
+    height: 850,
     webPreferences: {
-      contextIsolation: true,
+      // contextIsolation: false,
+      // nodeintegration: true,
       preload: path.join(__dirname, 'preload.js'),
     },
   })
@@ -22,6 +22,7 @@ const createWindow = () => {
 app.whenReady().then(() => {
   ipcMain.handle('dialog:openFile', handleFileOpen)
   ipcMain.handle('returnChart', returnChart)
+  ipcMain.handle('testIPC', test)
   createWindow();
 
   // On mac: open window when none are open
@@ -56,9 +57,4 @@ async function handleFileOpen() {
     let material = JSON.parse(fs.readFileSync(filePaths[0]))
     return material
   }
-}
-
-async function returnChart() {
-  let chart = new Chart();
-  return chart
 }
